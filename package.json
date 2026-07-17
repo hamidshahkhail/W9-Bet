@@ -1,0 +1,30 @@
+{
+  "name": "w9bet-game",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/start-dev.sh 3020",
+    "dev:3000": "bash scripts/start-dev.sh 3000",
+    "dev:local": "bash scripts/start-dev.sh 3020",
+    "dev:fresh": "bash scripts/start-dev.sh 3020",
+    "prebuild": "rm -rf .next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "optimize-images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "typescript": "^5"
+  }
+}
