@@ -16,7 +16,7 @@ function normalizeSiteUrl(raw: string | undefined): string {
 export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 /** External download target used by all download CTAs. */
-export const DOWNLOAD_URL = "https://www.w9bet.com/?r=lzu7013";
+export const DOWNLOAD_URL = "https://w9.bet/download?from_gameid=7872231&channelCode=100000";
 
 /** Primary hero / OG image — square app icon. */
 export const HERO_IMAGE = {
