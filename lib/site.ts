@@ -1,19 +1,5 @@
-const DEFAULT_SITE_URL = "https://w9betapp.com.pk";
-
-/** Avoids invalid `metadataBase` when env is empty or not a valid URL. */
-function normalizeSiteUrl(raw: string | undefined): string {
-  const trimmed = raw?.trim() ?? "";
-  if (!trimmed) return DEFAULT_SITE_URL;
-  const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-  try {
-    return new URL(withProtocol).origin.replace(/\/$/, "");
-  } catch {
-    return DEFAULT_SITE_URL;
-  }
-}
-
-/** Canonical site origin for metadata, sitemap, and robots. Override with NEXT_PUBLIC_SITE_URL in production. */
-export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+/** Live Search Console / canonical domain — do not point at w9betgame.com.pk. */
+export const SITE_URL = "https://w9betapp.com.pk";
 
 /** External download target used by all download CTAs. */
 export const DOWNLOAD_URL = "https://w9.bet/download?from_gameid=7872231&channelCode=100000";
