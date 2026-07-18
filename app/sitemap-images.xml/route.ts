@@ -1,4 +1,5 @@
 import { BLOG_POSTS } from "@/app/blog/posts";
+import { BRAND_LOGO, HERO_IMAGE } from "@/lib/site";
 import { escapeXml, siteOrigin } from "@/lib/sitemap-xml";
 
 export const dynamic = "force-static";
@@ -6,8 +7,8 @@ export const dynamic = "force-static";
 export function GET() {
   const base = siteOrigin();
   const homepageImages = [
-    { file: "w9-bet-pakistan-gaming-logo.webp", title: "W9.BET Pakistan gaming app icon" },
-    { file: "w9-bet-pakistan-logo-banner.webp", title: "W9 Bet Pakistan official logo banner" },
+    { file: HERO_IMAGE.src.replace(/^\/images\//, ""), title: HERO_IMAGE.alt },
+    { file: BRAND_LOGO.src.replace(/^\/images\//, ""), title: BRAND_LOGO.alt },
     { file: "W9Bet-Download.webp", title: "W9 Bet download and bonus promotions" },
     { file: "W9-Bet-Game.webp", title: "W9 Bet games lobby screenshot" },
     { file: "W9-Bet-Pakistan.webp", title: "W9 Bet Pakistan Easypaisa recharge screen" },
@@ -26,6 +27,14 @@ ${homepageImages
   .join("\n")}
   </url>`;
 
+  const aboutXml = `  <url>
+    <loc>${escapeXml(`${base}/about-us`)}</loc>
+    <image:image>
+      <image:loc>${escapeXml(`${base}/images/Blog/About-Us.webp`)}</image:loc>
+      <image:title>${escapeXml("About W9 Bet App Pakistan")}</image:title>
+    </image:image>
+  </url>`;
+
   const blogXml = BLOG_POSTS.map((post) => {
     const pageLoc = `${base}/blog/${post.slug}`;
     const imageLoc = post.featureImage.startsWith("http") ? post.featureImage : `${base}${post.featureImage}`;
@@ -42,6 +51,7 @@ ${homepageImages
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${homepageXml}
+${aboutXml}
 ${blogXml}
 </urlset>
 `;

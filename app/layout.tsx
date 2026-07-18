@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     "Explore W9 Bet: download APK, claim bonuses, play slots, card & prediction games, deposit via Easypaisa/JazzCash. Full Pakistan guide 2026.",
   formatDetection: { telephone: false },
   robots: { index: true, follow: true },
-  // Favicons: use app/icon.png + app/apple-icon.png (PNG from hero logo).
-  // WebP favicons are poorly supported in Safari/older browsers.
+  // Favicons: app/icon.png (192) + app/apple-icon.png (180) from W9.BET mark.
+  // Cropped to W+9 only for clarity at small sizes; PNG for Safari compatibility.
   openGraph: {
     type: "website",
     locale: "en_PK",

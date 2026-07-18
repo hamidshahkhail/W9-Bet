@@ -1,19 +1,6 @@
 # W9 Bet Game (Next.js)
 
-A fast, SEO-friendly site for W9 Bet Game APK information—**server-first** pages, minimal CSS, and optimized images.
-
-## No Node? Use the static version
-
-Open **`public/legacy/index.html`** in a browser, or:
-
-```bash
-cd public/legacy
-python3 -m http.server 8000
-```
-
-Then open [http://localhost:8000](http://localhost:8000).
-
----
+A fast, SEO-friendly site for W9 Bet Game APK information—**server-first** pages, minimal CSS, and optimized WebP images.
 
 ## Run the Next.js app
 

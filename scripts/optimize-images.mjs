@@ -15,14 +15,26 @@ const JOBS = [
   },
   {
     dir: "public/images",
-    files: ["W9-Bet-Game.webp", "W9-Bet-Money-Game.webp", "W9-Bet-Pakistan.webp", "W9Bet-Download.webp"],
+    files: [
+      "W9-Bet-Game.webp",
+      "W9-Bet-Money-Game.webp",
+      "W9-Bet-Pakistan.webp",
+      "W9Bet-Download.webp",
+    ],
     width: 1024,
     height: 576,
-    quality: 75,
+    quality: 72,
   },
   {
     dir: "public/images",
-    files: ["w9-bet-pakistan-gaming-logo.webp", "w9-bet-pakistan-logo-banner.webp"],
+    files: ["w9-bet-app-icon.webp"],
+    width: 512,
+    height: 512,
+    quality: 82,
+  },
+  {
+    dir: "public/images",
+    files: ["w9-bet-pakistan-logo-banner.webp"],
     width: null,
     height: null,
     quality: 82,
@@ -30,9 +42,8 @@ const JOBS = [
 ];
 
 async function optimizeFile(filePath, { width, height, quality }) {
-  const input = sharp(filePath);
-  const meta = await input.metadata();
-  let pipeline = input;
+  const meta = await sharp(filePath).metadata();
+  let pipeline = sharp(filePath);
 
   if (width && height && (meta.width > width || meta.height > height)) {
     pipeline = pipeline.resize(width, height, { fit: "inside", withoutEnlargement: true });
@@ -46,8 +57,9 @@ async function optimizeFile(filePath, { width, height, quality }) {
   await unlink(filePath);
   await rename(temp, filePath);
 
+  const out = await sharp(filePath).metadata();
   console.log(
-    `${path.basename(filePath)}: ${meta.width}x${meta.height} → saved ${Math.round((1 - after.size / before.size) * 100)}% (${Math.round(before.size / 1024)}KB → ${Math.round(after.size / 1024)}KB)`,
+    `${path.basename(filePath)}: ${meta.width}x${meta.height} → ${out.width}x${out.height} · saved ${Math.round((1 - after.size / before.size) * 100)}% (${Math.round(before.size / 1024)}KB → ${Math.round(after.size / 1024)}KB)`,
   );
 }
 

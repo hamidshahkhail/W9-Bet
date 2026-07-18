@@ -878,7 +878,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Complete W9 Bet safety check Pakistan guide covering security, legality, privacy, payment safety, fair play, and responsible usage.",
     focusKeyword: "W9 Bet safety check Pakistan",
     intent: "Trust + risk evaluation",
-    featureImage: "/images/Blog/Done-999-safety-check-Pakistan.webp",
+    featureImage: "/images/Blog/w9-bet-safety-check-pakistan.webp",
     featureImageAlt: "W9 Bet safety check Pakistan — is the app real and safe guide 2026",
     readTime: "14 min read",
     datePublished: "2026-04-22",

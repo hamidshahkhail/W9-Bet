@@ -20,8 +20,8 @@ export const DOWNLOAD_URL = "https://w9.bet/download?from_gameid=7872231&channel
 
 /** Primary hero / OG image — square app icon. */
 export const HERO_IMAGE = {
-  src: "/images/w9-bet-pakistan-gaming-logo.webp",
-  alt: "W9.BET Pakistan gaming app icon — download free APK for slots, card games, and Easypaisa deposits",
+  src: "/images/w9-bet-app-icon.webp",
+  alt: "W9.BET app icon — download free APK for Pakistan gaming",
   width: 512,
   height: 512,
 } as const;
