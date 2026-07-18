@@ -5,22 +5,22 @@ export const dynamic = "force-static";
 
 export function GET() {
   const base = siteOrigin();
-  const urls = BLOG_POSTS.map((p) => ({
-    loc: `${base}/blog/${p.slug}`,
-    priority: ["w9-bet-download", "w9-bet-deposit", "w9-bet-withdrawal", "w9-bet-safety-check-pakistan", "w9-bet-troubleshooting-guide"].includes(p.slug) ? "0.9" : "0.75",
-  }));
+
+  const urls = BLOG_POSTS.map((post) => {
+    const loc = `${base}/blog/${post.slug}`;
+    const lastmod = post.dateModified.slice(0, 10);
+    return `  <url>
+    <loc>${escapeXml(loc)}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>`;
+  }).join("\n");
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    ({ loc, priority }) => `  <url>
-    <loc>${escapeXml(loc)}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>${priority}</priority>
-  </url>`,
-  )
-  .join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+${urls}
 </urlset>
 `;
 
