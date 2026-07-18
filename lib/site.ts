@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://w9betgame.com.pk";
+const DEFAULT_SITE_URL = "https://w9betapp.com.pk";
 
 /** Avoids invalid `metadataBase` when env is empty or not a valid URL. */
 function normalizeSiteUrl(raw: string | undefined): string {

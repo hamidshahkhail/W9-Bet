@@ -1,6 +1,6 @@
 import { BRAND_LOGO, SITE_URL } from "@/lib/site";
 
-const ORG_NAME = "W9BetGame.com.pk";
+const ORG_NAME = "W9BetApp.com.pk";
 
 /** Shared Organization node for publisher/author references. */
 export function organizationJsonLd() {
@@ -20,7 +20,7 @@ export function websiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "W9 Bet Game",
-    alternateName: "W9BetGame.com.pk",
+    alternateName: "W9BetApp.com.pk",
     url: SITE_URL,
     inLanguage: "en-PK",
     publisher: organizationJsonLd(),

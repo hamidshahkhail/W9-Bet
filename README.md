@@ -27,7 +27,7 @@ npm run dev:fresh
 
 Copy `.env.example` to `.env.local` and set:
 
-- **`NEXT_PUBLIC_SITE_URL`** – your live origin (no trailing slash), e.g. `https://w9betgame.com.pk`  
+- **`NEXT_PUBLIC_SITE_URL`** – your live origin (no trailing slash), e.g. `https://w9betapp.com.pk`  
   Used for **metadata base**, **sitemap**, and **robots**.
 
 On **Vercel**, add the same variable under Project → Settings → Environment Variables for Production (and Preview if you want correct canonical URLs on preview deployments).

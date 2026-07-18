@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   const host = siteOrigin();
-  const body = `# robots.txt for w9betgame.com.pk
+  const body = `# robots.txt for w9betapp.com.pk
 
 # ============================================
 # AI CONTENT USAGE POLICY
